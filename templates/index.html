@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKD Prediction System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-light">
+    <div class="container mt-5 mb-5 main-container">
+        <h2 class="mb-4 text-center project-title">Chronic Kidney Disease Prediction</h2>
+
+        {% if error_message %}
+        <div class="alert alert-danger text-center" role="alert">
+            {{ error_message }}
+        </div>
+        {% endif %}
+
+        <form method="POST" action="/">
+            <div class="row g-3">
+                {% for feature_name in ordered_features %}
+                <div class="col-md-6 col-lg-4">
+                    <div class="form-group">
+                        <label for="{{ feature_name }}" class="form-label">{{ features_info[feature_name]['label'] }}:</label>
+                        {% if features_info[feature_name]['type'] == 'number' %}
+                            <input type="number" class="form-control" id="{{ feature_name }}" 
+                                   name="{{ feature_name }}" 
+                                   step="{{ features_info[feature_name]['step'] }}" 
+                                   value="{{ form_values.get(feature_name, '') }}" required>
+                        {% elif features_info[feature_name]['type'] == 'select' %}
+                            <select class="form-select" id="{{ feature_name }}" name="{{ feature_name }}" required>
+                                <option value="" disabled {% if not form_values.get(feature_name) %}selected{% endif %}>Select...</option>
+                                {% for option_text, option_value in features_info[feature_name]['options'].items() %}
+                                <option value="{{ option_value }}" {% if form_values.get(feature_name) == option_value|string %}selected{% endif %}>
+                                    {{ option_text }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary btn-predict">Predict CKD</button>
+            </div>
+        </form>
+
+        {% if prediction_text %}
+        <div class="alert alert-info mt-4 text-center prediction-result" role="alert">
+            <h4>Prediction: {{ prediction_text }}</h4>
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
