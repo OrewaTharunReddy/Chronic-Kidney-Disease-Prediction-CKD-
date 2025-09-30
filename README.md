@@ -1,9 +1,8 @@
 # Chronic Kidney Disease (CKD) Prediction System
 
-![CKD Prediction App Screenshot](https://github.com/OrewaTharunReddy/Chronic-Kidney-Disease-Prediction-CKD-/commit/e6f94b1cadfffb6af7625f0489c1004f11a0cd6e)
-(https://github.com/OrewaTharunReddy/Chronic-Kidney-Disease-Prediction-CKD-/commit/e6f94b1cadfffb6af7625f0489c1004f11a0cd6e)
-(https://github.com/OrewaTharunReddy/Chronic-Kidney-Disease-Prediction-CKD-/commit/e6f94b1cadfffb6af7625f0489c1004f11a0cd6e)
-<!-- After uploading your screenshot to the repo, replace the link above. This makes your project visually appealing from the start! -->
+![CKD Prediction App Screenshot](screenshots/Screenshot%202024-07-12%20021029.png)
+![CKD Prediction App Screenshot](screenshots/Screenshot%202024-07-12%20021203.png)
+![CKD Prediction App Screenshot](screenshots/Screenshot%202024-07-12%20021319.png)
 
 ## 1. Project Overview
 
