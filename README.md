@@ -1,8 +1,8 @@
 # Chronic Kidney Disease (CKD) Prediction System
 
-![CKD Prediction App Screenshot](screenshots/Screenshot%202024-07-12%20021029.png)
-![CKD Prediction App Screenshot](screenshots/Screenshot%202024-07-12%20021203.png)
-![CKD Prediction App Screenshot](screenshots/Screenshot%202024-07-12%20021319.png)
+![CKD Prediction App Screenshot](screenshots/ckd_detected_ss.png)
+![CKD Prediction App Screenshot](screenshots/no_ckd_ss.png)
+![CKD Prediction App Screenshot](screenshots/ui.png)
 
 ## 1. Project Overview
 
